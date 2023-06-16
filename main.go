@@ -15,7 +15,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	game := hangman.New(8, dictionary.GetRandomWord())
+	game, err := hangman.New(8, dictionary.GetRandomWord())
+
+	if err != nil {
+		fmt.Printf("Error starting a new game: %v\n", err)
+		os.Exit(1)
+	}
 
 	hangman.DrawWelcome()
 
