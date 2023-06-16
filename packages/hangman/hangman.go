@@ -46,6 +46,10 @@ func (game *Game) MakeAGuess(guess string) {
 		game.UsedLetters = append(game.UsedLetters, guess)
 		game.State = "badGuess"
 		game.TurnsLeft -= 1
+
+		if game.TurnsLeft == 0 {
+			game.State = "lost"
+		}
 	}
 }
 
