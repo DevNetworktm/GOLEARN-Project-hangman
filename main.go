@@ -30,6 +30,7 @@ func main() {
 		}
 
 		guess = strings.ToUpper(l)
+		game.MakeAGuess(guess)
 	}
 
 }
