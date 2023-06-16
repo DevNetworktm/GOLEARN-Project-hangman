@@ -2,14 +2,20 @@ package main
 
 import (
 	"fmt"
+	"hangman/packages/dictionary"
 	"hangman/packages/hangman"
 	"os"
 	"strings"
 )
 
 func main() {
-	game := hangman.New(8, "Golang")
-	fmt.Printf("%+v\n", game)
+	err := dictionary.Load("words.txt")
+	if err != nil {
+		fmt.Printf("Could not load dictionary: %v\n", err)
+		os.Exit(1)
+	}
+
+	game := hangman.New(8, dictionary.GetRandomWord())
 
 	hangman.DrawWelcome()
 

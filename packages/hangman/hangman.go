@@ -19,7 +19,7 @@ func New(turns int, word string) *Game {
 	}
 
 	g := &Game{
-		State:        "Started",
+		State:        "started",
 		Letters:      letters,
 		FoundLetters: found,
 		UsedLetters:  []string{},

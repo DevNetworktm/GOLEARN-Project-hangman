@@ -1,6 +1,8 @@
 package hangman
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func DrawWelcome() {
 	fmt.Println(`
@@ -131,6 +133,7 @@ func drawTruns(l int) {
 }
 
 func drawState(g *Game, guess string) {
+
 	fmt.Print("Guessed: ")
 	drawLetters(g.FoundLetters)
 	fmt.Print("Used: ")
